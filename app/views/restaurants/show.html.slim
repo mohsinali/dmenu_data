@@ -1,8 +1,11 @@
 p#notice = notice
 
 p
-  strong Name:
+  strong Name: 
   = @restaurant.name
+p
+	strong Image:
+	= image_tag @restaurant.image, width: 300, height: 300
 
 = link_to 'Edit', edit_restaurant_path(@restaurant)
 '|
