@@ -26,6 +26,9 @@ class DishesController < ApplicationController
   def create
     @dish = Dish.new(dish_params)
 
+    # Upload dish images.
+    upload_images
+
     respond_to do |format|
       if @dish.save
         format.html { redirect_to @dish, notice: 'Dish was successfully created.' }
@@ -58,6 +61,15 @@ class DishesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to dishes_url, notice: 'Dish was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def upload_images
+    # Upload dish images.
+    unless params[:dish][:dish_image].nil?
+      params[:dish][:dish_image][:image].each do |image|
+        @dish.dish_images.build(image: image)
+      end
     end
   end
 

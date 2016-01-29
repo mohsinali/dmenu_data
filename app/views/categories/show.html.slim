@@ -1,11 +1,11 @@
 p#notice = notice
 
 p
-  strong Name:
+  strong Name: 
   = @category.name
 p
-  strong Restaurant:
-  = @category.restaurant.name
+  strong Restaurant: 
+  = link_to @category.restaurant.name, @category.restaurant
 
 = link_to 'Edit', edit_category_path(@category)
 '|
