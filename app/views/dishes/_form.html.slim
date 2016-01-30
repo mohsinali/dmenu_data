@@ -1,0 +1,13 @@
+= simple_form_for(@dish) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :price
+    = f.input :description
+    = f.association :category
+    = f.fields_for :dish_image do |p|
+      = p.file_field :image, :multiple => true
+
+  .form-actions
+    = f.button :submit

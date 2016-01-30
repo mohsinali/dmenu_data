@@ -14,6 +14,7 @@ end
 gem 'bootstrap-sass'
 gem 'devise'
 gem 'figaro'
+gem 'carrierwave'
 gem 'high_voltage'
 gem 'pg'
 gem 'pundit'
