@@ -41,7 +41,6 @@ ActiveRecord::Schema.define(version: 20160129131709) do
     t.integer  "category_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "dishimg"
   end
 
   add_index "dishes", ["category_id"], name: "index_dishes_on_category_id", using: :btree
