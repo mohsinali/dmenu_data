@@ -4,7 +4,11 @@ class CategoriesController < ApplicationController
   # GET /categories
   # GET /categories.json
   def index
-    @categories = Category.all
+    if params[:restaurant_id]
+      @categories = Category.where(restaurant_id: params[:restaurant_id])
+    else
+      @categories = Category.all
+    end
   end
 
   # GET /categories/1

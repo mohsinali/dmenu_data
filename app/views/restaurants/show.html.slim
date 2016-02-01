@@ -7,6 +7,8 @@ p
 	strong Image:
 	= image_tag @restaurant.image, width: 300, height: 300
 
+= link_to 'View Categories', categories_path(restaurant_id: @restaurant.id)
+'|
 = link_to 'Edit', edit_restaurant_path(@restaurant)
 '|
 = link_to 'Back', restaurants_path
