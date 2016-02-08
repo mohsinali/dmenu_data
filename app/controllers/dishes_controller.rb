@@ -43,6 +43,9 @@ class DishesController < ApplicationController
   # PATCH/PUT /dishes/1
   # PATCH/PUT /dishes/1.json
   def update
+    # Upload dish images.
+    upload_images
+
     respond_to do |format|
       if @dish.update(dish_params)
         format.html { redirect_to @dish, notice: 'Dish was successfully updated.' }

@@ -8,6 +8,10 @@
     = f.association :category
     = f.fields_for :dish_image do |p|
       = p.file_field :image, :multiple => true
+    - if @dish.persisted?
+      - @dish.dish_images.each do |dish_image|
+        = image_tag dish_image.image, width: 100, height: 100
+        = link_to "Remove", dish_dish_image_path(@dish, dish_image), :method => :delete, :confirm => "Are you sure?"
 
   .form-actions
     = f.button :submit
